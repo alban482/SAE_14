@@ -5,13 +5,20 @@ body {
     font-weight: bold;
 }
 
+video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
+
+
 .header {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    position: relative;
     padding: 20px;
-    background-color: #5E5252;;
+    background-color: #5E5252;
+    ;
 }
 
 .logo-f1 {
@@ -19,9 +26,18 @@ body {
     height: auto;
 }
 
+.spacer {
+    width: 150px;
+}
+
+h1 {
+    flex: 1;
+    text-align: center;
+
+}
+
 .btn {
-    position: absolute;
-    right: 20px;
+    width: 150px;
     background-color: #e10600;
     color: white;
     padding: 12px 22px;
@@ -104,7 +120,7 @@ body {
     transform-origin: top;
 }
 
-.toggle-menu:checked + .p + .textes {
+.toggle-menu:checked+.p+.textes {
     max-height: 300px;
     animation: scale-up-ver-top 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) forwards;
     display: block;
@@ -114,11 +130,36 @@ body {
     display: none;
 }
 
-.sous-menu, .sous-menus, .p, .texte, .textes{
+.sous-menu,
+.sous-menus,
+.p,
+.texte,
+.textes {
 
     user-select: none;
 }
 
+.chargement {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    z-index: 100;
+    opacity: 1;
+    animation: fadeOut 1s forwards; 
+    animation-delay: 7s; 
+}
+
+.main-content {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    animation-delay: 7s; 
+}
 @-webkit-keyframes scale-up-ver-top {
     0% {
         -webkit-transform: scaleY(0.4);
@@ -149,4 +190,22 @@ body {
         -webkit-transform-origin: 100% 0%;
         transform-origin: 100% 0%;
     }
+}
+
+
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        visibility: visible;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
 }
