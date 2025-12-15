@@ -1,0 +1,38 @@
+body {
+    background-color: #111;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    gap: 60px; 
+    flex-wrap: wrap; 
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; 
+}
+
+.driver {
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+}
+
+.driver img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.driver-name {
+    font-weight: normal;
+}
+
+.driver-surname {
+    font-weight: bold;
+}
