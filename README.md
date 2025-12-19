@@ -1,0 +1,1 @@
+je présente mon site sr la f1, Il possède 3 pages et j'ai utilliser une animation trouver sur css animator pour les différents menus déroulant, j'ai également utlliser flexbox sur mes pages et est créé un écran de chargement sur la poage principal 
