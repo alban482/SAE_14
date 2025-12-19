@@ -1,26 +1,71 @@
+/* ================= RESET & BASE ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Orbitron', sans-serif;
+}
+
 body {
-    background-color: #111;
+    background: radial-gradient(circle at top, #121628, #070a14);
     color: #fff;
-    font-family: Arial, sans-serif;
     padding: 20px;
+}
+
+/* ================= HEADER ================= */
+.header {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.logo-f1 {
+    width: 180px;
+    height: auto;
+}
+
+.dropdown {
+    position: relative;
+    width: fit-content;
+    z-index: 100;
+    margin-bottom: 20px;
+}
+
+.dropbtn {
+    background-color: #222;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 .container {
     display: flex;
-    gap: 60px; 
-    flex-wrap: wrap; 
+    flex-direction: row;
+    gap: 30px;
+    background-color: #111;
+    padding: 20px;
+    list-style: none;
+    border-radius: 8px;
+    animation: scale-up-ver-top 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+    transform-origin: top center;
 }
+
+.dropdown:hover .container {
+    display: flex;
+}
+
 
 .column {
     display: flex;
     flex-direction: column;
-    gap: 15px; 
+    gap: 15px;
 }
 
 .driver {
     display: flex;
     align-items: center;
-    gap: 10px; 
+    gap: 10px;
 }
 
 .driver img {
@@ -35,4 +80,142 @@ body {
 
 .driver-surname {
     font-weight: bold;
+}
+
+.team-card {
+    position: relative;
+    height: 180px;
+    border-radius: 18px;
+    padding: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+    transition: transform 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-6px);
+}
+
+.team-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+    z-index: 2;
+}
+
+.team-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.team-name {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.team-car {
+    position: absolute;
+    bottom: 10px;
+    right: -30px;
+    width: 270px;
+    opacity: 0.95;
+}
+
+.alpine { background: linear-gradient(135deg, #0a1d2e, #1f4e7a); }
+.aston { background: linear-gradient(135deg, #0b2b1f, #1f6a4d); }
+.ferrari { background: linear-gradient(135deg, #2a0b0b, #6a1f1f); }
+.haas { background: linear-gradient(135deg, #1c1c1c, #3a3a3a); }
+.sauber { background: linear-gradient(135deg, #0b2a0b, #2f7a2f); }
+.mclaren { background: linear-gradient(135deg, #3a1c00, #ff7b00); }
+.mercedes { background: linear-gradient(135deg, #0b2a26, #2aa198); }
+.rb { background: linear-gradient(135deg, #1a1f3a, #324cff); }
+.redbull { background: linear-gradient(135deg, #0b102a, #1f2fff); }
+.williams { background: linear-gradient(135deg, #0b1f3a, #1f4fff); }
+
+p {
+
+    padding : 20px;
+}
+
+.about-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: rgba(18, 22, 40, 0.85);
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+}
+
+.about-container h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.about-content {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.about-photo img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.about-text {
+    max-width: 600px;
+}
+
+.about-text p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+@keyframes scale-up-ver-top {
+    0% { transform: scaleY(0.4); }
+    100% { transform: scaleY(1); }
+}
+
+@media (max-width: 1200px) {
+    .team-card { flex: 1 1 200px; height: 22vh; }
+    .team-car { width: 13vw; }
+}
+
+@media (max-width: 900px) {
+    .team-card { flex: 1 1 45%; height: 20vh; }
+    .team-car { width: 25vw; }
+    .driver img { width: 8vw; height: auto; }
+    .about-container h2 { font-size: 1.8rem; }
+    .about-text p { font-size: 0.95rem; }
+}
+
+@media (max-width: 600px) {
+    .team-card { flex: 1 1 100%; height: 18vh; }
+    .team-car { width: 40vw; }
+    .driver img { width: 12vw; height: auto; }
+    .about-container h2 { font-size: 1.5rem; }
+    .about-text p { font-size: 0.9rem; }
+}
+
+@media (max-width: 400px) {
+    body { padding: 3vw; }
+    .team-car { width: 60vw; }
+    .driver img { width: 15vw; }
+    .about-container h2 { font-size: 1.3rem; }
+    .about-text p { font-size: 0.85rem; }
 }
